@@ -47,6 +47,7 @@
     <Compile Include="Algorithms.FrogRiver.cs" />
     <Compile Include="Algorithms.IsPermutation.cs" />
     <Compile Include="Algorithms.LeftShift.cs" />
+    <Compile Include="Algorithms.MaxCounter.cs" />
     <Compile Include="Algorithms.MissingInteger.cs" />
     <Compile Include="Algorithms.PermiateMissingElement.cs" />
     <Compile Include="Algorithms.TapeEquilibrium.cs" />

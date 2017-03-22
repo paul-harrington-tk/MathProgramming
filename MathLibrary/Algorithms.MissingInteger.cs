@@ -13,6 +13,16 @@ namespace MathLibrary
         /// </summary>
         /// <param name="A">a.</param>
         /// <returns></returns>
+        /// <example>
+        /// input [1,2,4]
+        /// count = 3
+        /// finalCount = 4
+        /// total = 4 * (4 + 1) / 2 = 4 * (5) / 2) = 20 / 2 = 10
+        /// total = 10 - 1 = 9
+        /// total = 9 - 2 = 7
+        /// total = 7 - 4 = 3
+        /// return value is 3
+        /// </example>
         public static int MissingInteger(this int[] A)
         {
             // declare a return value and set it to 1
