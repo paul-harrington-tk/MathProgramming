@@ -8,11 +8,9 @@ namespace MathLibrary
 {
     public static partial class Algorithms
     {
-        public static int[] MaxCounter(this int[] A)
+        public static int[] MaxCounter(this int[] A, int N)
         {
-            // get the length of the array
-            var N = A.Length;
-            // declare a result array that is the same length as the input
+            // declare a result array that is the same length as the 'N' input value
             var results = new int[N];
             // initialize all values as 0
             for (var i = 0; i < results.Length; i++) results[i] = 0;

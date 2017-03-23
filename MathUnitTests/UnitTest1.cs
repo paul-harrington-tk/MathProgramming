@@ -1,5 +1,6 @@
 ﻿namespace MathUnitTests
 {
+    using System;
     using MathLibrary;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using StringLibrary;
@@ -7,6 +8,54 @@
     [TestClass]
     public class UnitTest1
     {
+        private TimeSpan timeLimit = new TimeSpan(0,0,0,0,240);
+
+        [TestMethod]
+        public void GenomeQueryTest()
+        {
+            var genomestring = "CAGCCTA";
+            var q = new[] {2, 5, 0};
+            var p = new[] {4,5,6};
+            var start = DateTime.Now;
+            var res = genomestring.GenomicRangeQuery(q, p);
+            var end = DateTime.Now.Subtract(start);
+            Assert.IsNotNull(res);
+            Assert.IsTrue(end < timeLimit);
+        }
+
+        [TestMethod]
+        public void GenomeQueryDoubleTest()
+        {
+            var genomestring = "TC";
+            var q = new[] {0, 0, 1};
+            var p = new[] {0, 1, 1};
+            var start = DateTime.Now;
+            var res = genomestring.GenomicRangeQuery(q, p);
+            var end = DateTime.Now.Subtract(start);
+            Assert.IsNotNull(res);
+            Assert.IsTrue(end < timeLimit);
+        }
+        [TestMethod]
+        public void PassingCarsTest()
+        {
+            var input = new int[10000];
+            for (var i = 0; i < input.Length; i++) input[i] = i%3 == 0 ? 0 : 1;
+            var start = DateTime.Now;
+            var res = input.PassingCars();
+            var end = DateTime.Now.Subtract(start);
+            
+            Assert.AreEqual(10000,res);
+            Assert.IsTrue(end < timeLimit);
+        }
+        [TestMethod]
+        public void CountDiv()
+        {
+            var input = 101;
+            var start = DateTime.Now;
+            var res = input.CountDivs(123000000, 10000);
+            var end = DateTime.Now.Subtract(start);
+            Assert.IsTrue(end < timeLimit);
+        }
         [TestMethod]
         public void LevensteinTest()
         {
